@@ -20,4 +20,9 @@ public class UserServiceImp implements UserService{
         user.setContactNO(userDTO.getContactNO());
         userRepositroy.save(user);
     }
+
+    @Override
+    public User getById(UserDTO userDTO) {
+        return null;
+    }
 }

@@ -1,6 +1,7 @@
 package com.gfg.java_webinar.controller;
 
 import com.gfg.java_webinar.dto.UserDTO;
+import com.gfg.java_webinar.model.User;
 import com.gfg.java_webinar.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,6 +18,11 @@ public class UserController {
     public String saveUser(@RequestBody UserDTO userDTO){
         userService.saveUser(userDTO);
         return "Successfully add the data into database.";
+    }
+
+    @PostMapping("/getById")
+    public User getById(@RequestBody UserDTO userDTO){
+        return userService.getById(userDTO);
     }
 
 }
